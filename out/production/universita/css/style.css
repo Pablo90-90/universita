@@ -1,0 +1,256 @@
+/* ============================
+   MINI APP DARK THEME
+============================ */
+
+/* ===== BODY (sfondo esterno) ===== */
+body {
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    background: #0f0f0f;
+    margin: 0;
+    padding: 60px; /* spazio dai bordi schermo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #ffffff;
+}
+
+/* ===== CONTENITORE PRINCIPALE (mini app) ===== */
+.dashboard {
+    display: flex;
+    width: 1200px;
+    max-width: 95%;
+    min-height: 700px;
+    background: #181818;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.8);
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+    width: 240px;
+    background: #000000;
+    padding: 35px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.sidebar h2 {
+    color: #1db954;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sidebar a {
+    color: #b3b3b3;
+    text-decoration: none;
+    padding: 12px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.sidebar a:hover {
+    background: #1a1a1a;
+    color: #ffffff;
+}
+
+.sidebar .red {
+    background: #b91c1c;
+    color: white;
+    text-align: center;
+}
+
+.sidebar .red:hover {
+    background: #991b1b;
+}
+
+/* ===== MAIN CONTENT ===== */
+.main-content {
+    flex: 1;
+    padding: 50px;
+    overflow-y: auto;
+}
+
+/* ===== GRID ===== */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+/* ===== CARD ===== */
+.card,
+.dashboard-card,
+.login-card {
+    background: #202020;
+    padding: 25px;
+    border-radius: 16px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+}
+
+.card:hover,
+.dashboard-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.8);
+}
+
+.card h2,
+.card h3,
+.dashboard-card h3 {
+    margin-top: 0;
+    color: #ffffff;
+}
+
+/* ===== INPUT ===== */
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 14px;
+    border-radius: 6px;
+    border: 1px solid #333;
+    background: #121212;
+    color: #ffffff;
+    font-size: 14px;
+    transition: border-color 0.2s ease;
+}
+
+input:focus,
+select:focus {
+    border-color: #1db954;
+    outline: none;
+}
+
+input::placeholder {
+    color: #777;
+}
+
+/* ===== BUTTON ===== */
+.button,
+input[type="submit"],
+button {
+    background: #1db954;
+    color: black;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.button:hover,
+input[type="submit"]:hover,
+button:hover {
+    background: #1ed760;
+    transform: scale(1.05);
+}
+
+.button.red {
+    background: #b91c1c;
+    color: white;
+}
+
+.button.red:hover {
+    background: #991b1b;
+}
+
+/* ===== MESSAGES ===== */
+.message {
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 18px;
+    font-size: 14px;
+}
+
+.success {
+    background: rgba(29,185,84,0.15);
+    color: #1db954;
+}
+
+.error {
+    background: rgba(239,68,68,0.15);
+    color: #ef4444;
+}
+
+/* ===== TABLE ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: #202020;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+thead {
+    background: #000000;
+}
+
+thead th {
+    padding: 12px;
+    font-size: 14px;
+    text-align: left;
+    color: #ffffff;
+}
+
+tbody tr {
+    border-bottom: 1px solid #2a2a2a;
+    transition: background 0.2s ease;
+}
+
+tbody tr:hover {
+    background: #1a1a1a;
+}
+
+td {
+    padding: 10px;
+    font-size: 14px;
+    color: #b3b3b3;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1000px) {
+    body {
+        padding: 20px;
+    }
+
+    .dashboard {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .sidebar {
+        width: 100%;
+        flex-direction: row;
+        overflow-x: auto;
+        padding: 15px;
+    }
+
+    .main-content {
+        padding: 25px;
+    }
+}
+
+.badge {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.badge.accettato { background: rgba(29,185,84,0.2); color: #1db954; }
+.badge.attesa { background: rgba(234,179,8,0.2); color: #eab308; }
+.badge.rifiutato { background: rgba(239,68,68,0.2); color: #ef4444; }
