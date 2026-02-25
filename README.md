@@ -337,5 +337,3 @@ L’evoluzione ha riguardato:
 * controlli avanzati su ogni operazione  
 
 Il risultato finale rappresenta un’applicazione web universitaria completa, stabile e pronta per ulteriori estensioni.
-
-Dimmi tu come vuoi rifinirla.
